@@ -1,0 +1,141 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 3,
+  "final_space": true,
+  "palette": {
+    "surface": "#141218",
+    "surfaceHigh": "#2B2930",
+    "surfaceHighest": "#36343B",
+    "onSurface": "#E6E0E9",
+    "onVariant": "#CAC4D0",
+    "outline": "#938F99",
+    "primary": "#D0BCFF",
+    "onPrimary": "#381E72",
+    "primaryC": "#4F378B",
+    "onPrimaryC": "#EADDFF",
+    "secondary": "#CCC2DC",
+    "secondaryC": "#4A4458",
+    "onSecondaryC": "#E8DEF8",
+    "tertiary": "#EFB8C8",
+    "tertiaryC": "#633B48",
+    "onTertiaryC": "#FFD8E4"
+  },
+  "transient_prompt": {
+    "foreground": "p:primary",
+    "background": "transparent",
+    "template": "❯ "
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "os",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "foreground": "p:onPrimary",
+          "background": "p:primary",
+          "template": " {{ .Icon }} "
+        },
+        {
+          "type": "path",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "foreground": "p:onSecondaryC",
+          "background": "p:secondaryC",
+          "template": " \uf07c {{ .Path }} ",
+          "properties": {
+            "style": "agnoster_short",
+            "max_depth": 3,
+            "home_icon": "~",
+            "folder_separator_icon": " \u203a ",
+            "mapped_locations": {
+              "~/Desktop": "\uf108",
+              "~/Documents": "\uf15c",
+              "~/Downloads": "\uf019",
+              "~/Music": "\uf001",
+              "~/Pictures": "\uf03e",
+              "~/Videos": "\uf03d"
+            }
+          }
+        },
+        {
+          "type": "git",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "foreground": "p:onTertiaryC",
+          "background": "p:tertiaryC",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          }
+        },
+        {
+          "type": "node",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "foreground": "p:onVariant",
+          "background": "p:surfaceHigh",
+          "template": " \ue718 {{ .Full }} "
+        },
+        {
+          "type": "python",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "foreground": "p:onVariant",
+          "background": "p:surfaceHigh",
+          "template": " \ue73c {{ .Full }} "
+        },
+        {
+          "type": "executiontime",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4 ",
+          "foreground": "p:onVariant",
+          "background": "p:surfaceHigh",
+          "template": " \uf252 {{ .FormattedMs }} ",
+          "properties": {
+            "threshold": 2000,
+            "style": "round"
+          }
+        },
+        {
+          "type": "status",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "foreground": "#F9DEDC",
+          "background": "#8C1D18",
+          "template": " \uf00d {{ .Code }} ",
+          "properties": {
+            "always_enabled": false
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:primary",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#F2B8B5{{ end }}"
+          ],
+          "template": "❯"
+        }
+      ]
+    }
+  ]
+}

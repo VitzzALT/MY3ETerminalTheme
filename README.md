@@ -1,4 +1,4 @@
-# MY3E Terminal Theme
+# MY3E Powershell Theme
 
 Tema **Material You (Material 3 Expressive)** para o **PowerShell 7**, com **Oh-My-Posh** e **Windows Terminal**.
 Ele segue a **cor de destaque do Windows**, que no modo *Automático* vem do papel de parede, e usa a mesma paleta tonal do [MY3E Firefox Theme](https://github.com/VitzzALT/MY3EFirefoxTheme).
